@@ -1,0 +1,21 @@
+#+TITLE GRICH
+#+INDENT STARTUP
+
+* 简介
+本项目是一个RUST简单练手项目:为一个GIT扩展命令行工具, 基于GIT自带命令, 输出当前GIT仓库更加丰富的仓库
+信息. 目前实现了输出TAG名称及其描述信息和BRANCH名称及其描述信息. 基本原理就是使用RUST执行SHELL命令,
+SHELL命令就是对应的GIT命令, 以此达到输出GIT信息. 项目代码里主要是两部分处理, 一是对命令行输入的处理,
+二是对SHELL命令的执行及其结果的处理.
+
+* 使用
+1. 按照RUST官网搭建好RUST编译环境
+2. git clone && cd grich
+3. cargo build --release
+4. add 'current_path/grich/target/release' to PATH
+5. grich command name
+   - command=tag|TAG, 输出仓库TAG名称及其描述信息.
+   - command=branch|BRANCH, 输出仓库BRANCH名称及其描述信息.
+   - name有值时, 输出指定的TAG或者BRANCH; 无值时, 输出所有TAG或BRANCH.
+
+* 参考
+1. [[https://github.com/starship/starship][starship]]
